@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توعية أمنية - QM3.L</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .awareness-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #4CAF50;
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        .emoji {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        .warning-points {
+            text-align: right;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        .warning-points li {
+            margin: 10px 0;
+            list-style: none;
+            padding-right: 25px;
+            position: relative;
+        }
+        .warning-points li:before {
+            content: "⚠️";
+            position: absolute;
+            right: 0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .danger {
+            color: #ff5252;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+        .security-tips {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="awareness-container">
+        <div class="emoji">😂</div>
+        <h1>هاها! لا تخاف 😂</h1>
+        <p>كانت <span class="highlight">مزحة توعوية</span> من QM3.L!</p>
+        
+        <div class="security-tips">
+            <h2>🔒 نصائح أمنية مهمة:</h2>
+            <div class="warning-points">
+                <li>لا تضغط على <span class="danger">الروابط المشبوهة</span> في الرسائل</li>
+                <li>تأكد من مصدر الرسالة قبل فتح أي رابط</li>
+                <li>لا تدخل معلوماتك الشخصية في مواقع غير موثوقة</li>
+                <li>شغل الحماية على جهازك دائماً</li>
+                <li>إذا شككت في رابط، اسأل مرجع موثوق قبل الضغط</li>
+            </div>
+        </div>
+
+        <p>🎯 <span class="highlight">الهدف:</span> تعليمك كيف تحمي نفسك من الاحتيال الإلكتروني</p>
+        <p>✅ <span class="highlight">تذكر:</span> المستحيل أن يتم تصويرك من خلال رابط!</p>
+        
+        <div class="footer">
+            <p>© 2024 QM3.L - حملة توعية أمنية</p>
+            <p>مزحة بريئة لأغراض التعليم والحماية فقط</p>
+        </div>
+    </div>
+</body>
+</html>
