@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحذير أمني - Qm3.l</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #4b0000);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(0,0,0,0.85);
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #ff0000;
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(255,0,0,0.5);
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255,0,0,0.7);
+            animation: shake 0.8s infinite;
+        }
+        @keyframes shake {
+            0%,100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .note-box {
+            background: rgba(255,0,0,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff0000;
+        }
+        .note-box li {
+            margin: 10px 0;
+            list-style: none;
+            text-align: right;
+            padding-right: 20px;
+            position: relative;
+        }
+        .note-box li:before {
+            content: "⚠️";
+            position: absolute;
+            right: 0;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #ff0000;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 15px #ff0000;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #ff0000; }
+            to   { box-shadow: 0 0 25px #ff5555; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>انت ما تفهم؟؟؟</h1>
+        <p>بياناتك بتضيع إذا ما انتبهت! احذر من الروابط والمواقع المشبوهة!</p>
+
+        <div class="note-box">
+            <ul>
+                <li>لا تضغط على أي رابط غريب أو مجهول</li>
+                <li>تأكد دائمًا من مصدر الرسائل قبل فتحها</li>
+                <li>البيانات الشخصية مهمة، لا تشاركها مع أي جهة غير موثوقة</li>
+                <li>حماية جهازك أولوية، لا تهملها</li>
+            </ul>
+        </div>
+
+<a href="https://www.instagram.com/qm3.l?igsh=cnczeW82OWNjemZn" target="_blank" class="back-btn">📲 شارك بنشر التوعية معنا</a>
+
+        <div class="footer">
+            <p>© 2025 Qm3.l - حملة توعية أمنية</p>
+            <p>الهدف: حماية بياناتك من المخاطر الرقمية</p>
+        </div>
+    </div>
+</body>
+</html>
