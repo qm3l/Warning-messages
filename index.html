@@ -221,6 +221,45 @@
                 height: 100px;
             }
         }
+
+        /* تأثير اللمعة للزر */
+.cta-button {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { 
+        box-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444; 
+    }
+    to { 
+        box-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000; 
+    }
+}
+
+/* الهدية الدوّارة */
+.gift-spinner {
+    font-size: 2.5em;
+    animation: spin 2s infinite linear;
+    display: block;
+    margin: 15px 0;
+    text-shadow: 0 0 10px gold;
+}
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
+}
+
+/* تأثير نبض للهدية */
+.gift-pulse {
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
     </style>
 </head>
 <body>
@@ -237,6 +276,10 @@
         <div class="price-tag">
             <div class="original-price">السعر الأصلي: 600 ريال</div>
             <div class="new-price">فقط 400 ريال!</div>
+            <div class="gift-spinner gift-pulse">🎁</div>
+<div style="color: #ff6b00; font-weight: bold; margin: 5px 0;">
+    + 100 ميجا هدية مجانية!
+</div>
             <div>توفير 33%</div>
         </div>
 
