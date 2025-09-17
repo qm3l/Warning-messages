@@ -51,8 +51,17 @@
         }
         @keyframes shake {0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
 
+        .message-box {
+            border:3px solid red;
+            padding:20px;
+            border-radius:15px;
+            margin-bottom:20px;
+            color:white;
+            max-width:400px;
+        }
+
         .cta-button {
-            display:inline-block;
+            display:none;
             margin-top:20px;
             padding:15px 35px;
             background:#ff0000;
@@ -64,6 +73,12 @@
             animation:glow 1.5s infinite alternate;
         }
         @keyframes glow { from{box-shadow:0 0 10px #ff0000} to{box-shadow:0 0 25px #ff5555} }
+
+        .countdown {
+            font-size:1.5em;
+            color:red;
+            margin-top:10px;
+        }
     </style>
 </head>
 <body>
@@ -74,16 +89,35 @@
 
     <!-- شاشة تم الاختراق -->
     <div class="breach-screen" id="breachScreen">
-        <h1>تم اختراق جهازك!</h1>
-        <p>اضغط الزر لمشاهدة الصورة التي تم التقاطها</p>
-        <a href="joke.html" class="cta-button">👀 شاهد صورتك الآن</a>
+        <h1>💀 تم اختراق جهازك!</h1>
+        <div class="message-box">
+            بيانات جهازك معرضة للخطر! انتبه، اضغط الزر لمشاهدة الصورة التي تم التقاطها
+        </div>
+        <div class="countdown" id="countdown">3</div>
+        <a href="joke.html" class="cta-button" id="ctaButton"> شاهد صورتك الآن</a>
     </div>
 
     <script>
-        // بعد ثانيتين تختفي شاشة SYSTEM COMPROMISED
+        // بعد ثانيتين تختفي شاشة SYSTEM COMPROMISED وتظهر شاشة الاختراق
         setTimeout(() => {
             document.getElementById('systemBreach').style.display = 'none';
             document.getElementById('breachScreen').style.display = 'flex';
+
+            // بدء عداد 3 ثواني قبل ظهور الزر
+            let countdown = 3;
+            const countdownEl = document.getElementById('countdown');
+            const btn = document.getElementById('ctaButton');
+
+            const interval = setInterval(() => {
+                countdown--;
+                if(countdown > 0){
+                    countdownEl.textContent = countdown;
+                } else {
+                    countdownEl.style.display = 'none';
+                    btn.style.display = 'inline-block';
+                    clearInterval(interval);
+                }
+            }, 1000);
         }, 2000);
     </script>
 </body>
