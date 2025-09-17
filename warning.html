@@ -3,35 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تم الإختراق</title>
+    <title>تنبيه أمني</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #000; color: white; min-height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; padding: 20px; }
-        .warning-container { background: rgba(255, 0, 0, 0.1); padding: 40px; border-radius: 15px; border: 3px solid red; max-width: 600px; width: 100%; }
-        h1 { color: red; font-size: 2em; margin-bottom: 20px; text-shadow: 0 0 10px red; }
-        p { font-size: 1.2em; line-height: 1.6; margin: 15px 0; }
-        .camera-icon { font-size: 4em; margin: 20px 0; color: red; }
-        .cta-button { background: red; color: white; padding: 15px 30px; font-size: 1.2em; border: none; border-radius: 25px; cursor: pointer; margin: 20px 0; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .warning-container {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px solid red;
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .camera-icon {
+            font-size: 4em;
+            margin: 20px 0;
+            color: red;
+        }
+        
+        h1 {
+            color: red;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px red;
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        
+        .cta-button {
+            background: red;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 20px 0;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        /* تأثيرات الرعب الإضافية */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        .shaking-text {
+            animation: shake 0.5s infinite;
+            color: red;
+            font-size: 2em;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .location-box {
+            background: #111;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid red;
+        }
+        
+        .progress-bar {
+            background: #444;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            background: red;
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        
+        .error-console {
+            background: #300;
+            color: #ff6b6b;
+            padding: 10px;
+            border: 1px solid red;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            height: 100px;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        
+        .countdown-timer {
+            background: black;
+            padding: 15px;
+            border: 2px solid red;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .system-breach {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            z-index: 9999;
+            display: none;
+        }
+        
+        .small-text {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="warning-container">
-        <div class="camera-icon">💀</div>
-        <h1>⚠️ تم الإختراق ⚠️</h1>
+        <div class="camera-icon">📸</div>
+        <h1>⚠️ تنبيه أمني ⚠️</h1>
         <p>بسبب ضغطك على الرابط، تم تنشيط كاميرا جهازك تلقائياً!</p>
         <p>لقد تم التقاط صورتك دون علمك</p>
         <p>لرؤية الصورة التي التقطت، اضغط على الزر أدناه</p>
         
-        <!-- امسح الزر القديم وضف هذا -->
-<a href="joke.html" class="cta-button"> شاهد صورتك الان</a>
+        <a href="joke.html" class="cta-button">👀 شاهد صورتك الآن</a>
         
-        <p style="color: #ccc; font-size: 0.9em; margin-top: 20px;">
-            قد يتم مشاركة صورتك مع أطراف ثالثة إذا لم تقم باتخاذ الإجراء اللازم
+        <p class="small-text">قد يتم مشاركة صورتك مع أطراف ثالثة إذا لم تقم باتخاذ الإجراء اللازم</p>
+    </div>
+
+    <!-- العناصر المرعبة الإضافية -->
+    <div class="shaking-text">⚠️ لقد اخترق جهازك! ⚠️</div>
+
+    <div class="countdown-timer">
+        <h3 style="color: red;">⏰ الصورة ستنشر خلال: </h3>
+        <div id="publishCountdown" style="font-size: 2em; color: white; font-family: monospace;">
+            00:00:30
+        </div>
+        <p style="color: #ccc; font-size: 0.9em;">
+            سيتم مشاركة صورتك على وسائل التواصل خلال 30 ثانية
         </p>
     </div>
 
+    <div class="location-box">
+        <h4 style="color: red; text-align: center;">📍 موقعك الحالي: </h4>
+        <div style="background: #222; padding: 10px; border-radius: 5px;">
+            <p style="color: white; margin: 5px 0;">🌍 المحافظة: <span id="fakeCity">صنعاء</span></p>
+            <p style="color: white; margin: 5px 0;">📡 الخط: <span id="fakeLine">يمن موبايل</span></p>
+            <p style="color: white; margin: 5px 0;">📶 القوة: <span id="fakeSignal">78%</span></p>
+        </div>
+    </div>
+
+    <div style="background: #222; padding: 10px; border-radius: 5px; margin: 20px 0;">
+        <p style="color: white; margin: 0 0 10px 0;">📤 جاري رفع صورتك إلى السحابة: </p>
+        <div class="progress-bar">
+            <div id="uploadProgress" class="progress-fill"></div>
+        </div>
+        <p id="progressText" style="color: #ccc; margin: 5px 0 0 0; text-align: center;">0%</p>
+    </div>
+
+    <div class="error-console" id="errorMessages">
+        <div>⚠️ System breach detected!</div>
+        <div>❌ Firewall bypassed</div>
+        <div>📸 Camera activated: FRONT_CAM</div>
+    </div>
+
+    <div class="system-breach" id="systemBreach">
+        ⚠️ SYSTEM COMPROMISED ⚠️
+    </div>
+
     <script>
-        }
+        // بيانات يمنية
+        const yemeniCities = ['صنعاء', 'عدن', 'تعز', 'حضرموت', 'الحديدة', 'إب', 'مأرب', 'المكلا', 'عمران', 'ذمار'];
+        const yemeniNetworks = ['يمن موبايل', 'MTN', 'صافون', 'Y', 'سبأفون'];
+
+        // عدّاد النشر
+        let timeLeft = 5 * 60; // 5 دقائق
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('publishCountdown').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('publishCountdown').textContent = "00:00:00";
+                document.getElementById('publishCountdown').style.color = "red";
+            }
+        }, 1000);
+
+        // تغيير الموقع العشوائي
+        setInterval(() => {
+            document.getElementById('fakeCity').textContent = yemeniCities[Math.floor(Math.random() * yemeniCities.length)];
+            document.getElementById('fakeLine').textContent = yemeniNetworks[Math.floor(Math.random() * yemeniNetworks.length)];
+            document.getElementById('fakeSignal').textContent = Math.floor(Math.random() * 100) + "%";
+        }, 3000);
+
+        // محاكاة رفع الصورة
+        let progress = 0;
+        const progressInterval = setInterval(() => {
+            if (progress < 100) {
+                progress += Math.floor(Math.random() * 10) + 5; // زيادة عشوائية
+                if (progress > 100) progress = 100;
+                document.getElementById('uploadProgress').style.width = progress + "%";
+                document.getElementById('progressText').textContent = progress + "%";
+            } else {
+                clearInterval(progressInterval);
+                document.getElementById('progressText').textContent = "✔️ تم الرفع بنجاح";
+            }
+        }, 800);
+
+        // محاكاة ظهور رسائل خطأ في الكونسول
+        const errorMessages = [
+            "⚠️ Unauthorized access detected!",
+            "❌ Encryption key leaked",
+            "📡 Location tracked",
+            "⚠️ Uploading sensitive data...",
+            "❌ VPN bypassed",
+            "📸 Camera activated: BACK_CAM"
+        ];
+        let errorIndex = 0;
+        setInterval(() => {
+            const consoleDiv = document.getElementById('errorMessages');
+            consoleDiv.innerHTML += "<div>" + errorMessages[errorIndex] + "</div>";
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            errorIndex = (errorIndex + 1) % errorMessages.length;
+        }, 2000);
+
+        // شاشة النظام المخترق (System Breach)
+        setTimeout(() => {
+            document.getElementById('systemBreach').style.display = "flex";
+        }, 15000); // تظهر بعد 15 ثانية
     </script>
 </body>
 </html>
