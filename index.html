@@ -219,9 +219,7 @@
         <div class="badge">🔥 الأكثر طلباً</div>
         <div class="badge">⚡ محدود الكمية</div>
 
-        <button class="cta-button" onclick="redirectToWarning()">
-            🚀 احصل على الباقة الآن
-        </button>
+        <a href="warning.html" class="cta-button">🚀 احصل على الباقة الآن</a>
 
         <p class="small-text">
             * العرض ساري حتى نفاد الكمية
@@ -237,12 +235,7 @@
     </div>
 
     <script>
-        function redirectToWarning() {
-            setTimeout(function() {
-                window.location.href = "warning.html";
-            }, 1500);
-            
-            alert("جاري معالجة طلبك...");
+    
         }
         
         function startCountdown() {
