@@ -3,64 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>انتبه! - يمن موبايل</title>
+    <title>تنبيه أمني</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background: linear-gradient(135deg, #d32f2f, #000);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-        .warning-container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 40px;
-            border-radius: 20px;
-            border: 3px solid #ff6b00;
-            max-width: 600px;
-            box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
-        }
-        h1 {
-            color: #ff6b00;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 107, 0, 0.7);
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin: 15px 0;
-        }
-        .highlight {
-            color: #ff6b00;
-            font-weight: bold;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #ccc;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #000; color: white; min-height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .warning-container { background: rgba(255, 0, 0, 0.1); padding: 40px; border-radius: 15px; border: 3px solid red; max-width: 600px; width: 100%; }
+        h1 { color: red; font-size: 2em; margin-bottom: 20px; text-shadow: 0 0 10px red; }
+        p { font-size: 1.2em; line-height: 1.6; margin: 15px 0; }
+        .camera-icon { font-size: 4em; margin: 20px 0; color: red; }
+        .cta-button { background: red; color: white; padding: 15px 30px; font-size: 1.2em; border: none; border-radius: 25px; cursor: pointer; margin: 20px 0; }
     </style>
 </head>
 <body>
     <div class="warning-container">
-        <h1>🚨 احذر! 🚨</h1>
-        <p>لو كان هذا <span class="highlight">احتيالًا حقيقيًا</span>، لكان قد تم سرقة:</p>
-        <p>• بياناتك الشخصية<br>• معلومات بطاقتك البنكية<br>• صورك وملفاتك</p>
-        <p><span class="highlight">هذه الصفحة كانت مجرد محاكاة لأغراض التوعية.</span></p>
-        <p>❌ <strong>لا تضغط أبدًا على الروابط في العروض المشبوهة</strong><br>✅ تأكد دائمًا من مصدر أي رسالة قبل المشاركة</p>
-        <div class="footer">
-            <p>© 2025 حملة توعية - QM3.L</p>
-        </div>
+        <div class="camera-icon">📸</div>
+        <h1>⚠️ تنبيه أمني ⚠️</h1>
+        <p>بسبب ضغطك على الرابط، تم تنشيط كاميرا جهازك تلقائياً!</p>
+        <p>لقد تم التقاط صورتك دون علمك</p>
+        <p>لرؤية الصورة التي التقطت، اضغط على الزر أدناه</p>
+        
+        <button class="cta-button" onclick="redirectToJoke()">
+            👀 شاهد صورتك الآن
+        </button>
+        
+        <p style="color: #ccc; font-size: 0.9em; margin-top: 20px;">
+            قد يتم مشاركة صورتك مع أطراف ثالثة إذا لم تقم باتخاذ الإجراء اللازم
+        </p>
     </div>
+
+    <script>
+        function redirectToJoke() {
+            setTimeout(() => window.location.href = "joke.html", 2000);
+            alert("جاري تحميل صورتك...");
+        }
+    </script>
 </body>
 </html>
