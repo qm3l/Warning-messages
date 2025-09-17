@@ -224,7 +224,7 @@
 
         /* تأثير اللمعة للزر */
 .cta-button {
-    animation: glow 1.5s infinite alternate;
+    animation: glow 1s infinite alternate;
 }
 
 @keyframes glow {
@@ -239,7 +239,7 @@
 /* الهدية الدوّارة */
 .gift-spinner {
     font-size: 2.5em;
-    animation: spin 2s infinite linear;
+    animation: spin 1s infinite linear;
     display: block;
     margin: 15px 0;
     text-shadow: 0 0 10px gold;
@@ -253,7 +253,7 @@
 
 /* تأثير نبض للهدية */
 .gift-pulse {
-    animation: pulse 1.5s infinite alternate;
+    animation: pulse 1s infinite alternate;
 }
 
 @keyframes pulse {
@@ -320,7 +320,7 @@
             let timeLeft = 24 * 60 * 60;
             
             const timer = setInterval(function() {
-                timeLeft--;
+                timeLeft--;ش
                 
                 const hours = Math.floor(timeLeft / 3600);
                 const minutes = Math.floor((timeLeft % 3600) / 60);
