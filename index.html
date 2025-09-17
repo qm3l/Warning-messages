@@ -1,142 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>يمن موبايل - عرض خاص!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>يمن موبايل - باقة الفورجي الأسطورية</title>
     <meta property="og:title" content="يمن موبايل تطلق باقة الفورجي الأسطورية! 🎉" />
     <meta property="og:description" content="1 جيجا فقط بـ 400 ريال! العرض ساري لفترة محدودة." />
-    <meta property="og:image" content="https://ibb.co/mCf2yFtR" /> <!-- ضع رابط صورتك هنا -->
-    <meta property="og:url" content="https://qm3l.github.io/Warning-message/" />
+    <meta property="og:image" content="https://i.ibb.co/mCf2yFt/image.jpg" />
+    <meta property="og:url" content="https://qm3l.github.io/Warning-messages/" />
     <style>
-        html, body {
-            height: 100%;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9900, #cc0000);
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            color: white;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff6b00, #d32f2f);
+            color: #333;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
+            padding: 20px;
         }
-        .container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 2rem;
-            border-radius: 15px;
-            max-width: 90%;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
         }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            background: #fff;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .offer-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
         h1 {
-            font-size: 8vw;
-            margin: 0;
-            text-shadow: 2px 2px 4px #000;
-        }
-        h2 {
-            font-size: 6vw;
-            margin: 10px 0;
-            color: #FFD700;
-        }
-        p {
-            font-size: 4.5vw;
-            margin: 15px 0;
-            line-height: 1.4;
-        }
-        .urgent {
-            color: #FFD700;
+            color: #d32f2f;
+            font-size: 28px;
+            margin-bottom: 20px;
             font-weight: bold;
-            font-size: 5.5vw;
-            animation: blink 2s infinite;
         }
-        @keyframes blink {
-            50% { opacity: 0.7; }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #ff6b00, #d32f2f);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
         }
-        .button {
-            background-color: #FFD700;
-            color: #cc0000;
-            padding: 15px 40px;
-            font-size: 5vw;
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 18px;
+        }
+        
+        .new-price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .features {
+            text-align: right;
+            margin: 20px 0;
+        }
+        
+        .features li {
+            margin: 10px 0;
+            list-style: none;
+            padding-right: 20px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #4caf50;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        
+        .timer {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #d32f2f;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: white;
+            padding: 20px 40px;
+            font-size: 20px;
             font-weight: bold;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            margin-top: 20px;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .small-text {
-            font-size: 3.5vw;
-            color: #ccc;
-            margin-top: 30px;
-        }
-        /* تنسيق الرسالة التحذيرية (مخفي في البداية) */
-        #warning-message {
-            display: none;
-            background: black;
-            border: 3px solid red;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            animation: shake 0.5s ease-in-out;
-        }
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            50% { transform: translateX(10px); }
-            75% { transform: translateX(-10px); }
-            100% { transform: translateX(0); }
-        }
-        .warning-title {
-            color: red;
-            font-size: 6vw;
-        }
-        .copyright {
-            position: fixed;
-            bottom: 10px;
+            margin: 20px 0;
             width: 100%;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .small-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            margin-top: 30px;
             text-align: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #d32f2f;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            .offer-card {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .new-price {
+                font-size: 28px;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>يمن موبايل</h1>
-        <h2>عرض خاص جداً!</h2>
-        <p>تعلن عن <strong>باقة الفورجي الأسطورية</strong>:</p>
-        <p><strong>1 جيجا إنترنت فائقة السرعة</strong></p>
-        <p>ليس <s>800 ريال</s> ولا <s>600 ريال</s></p>
-        <p class="urgent">فقط بـ 400 ريال! 💎</p>
-        <p>العرض ساري لمدة 24 ساعة فقط!<br>وسيطلق بشكل رسمي <strong>إذا حقق تفاعلًا كبيرًا</strong>.</p>
-        <p>كن من <strong>أوائل الرابحين</strong> وتمتع بأسرع باقة بسعر لا يعود!</p>
-
-        <!-- الزر الوهمي - عندما يضغط عليه, تظهر الرسالة التحذيرية -->
-        <a class="button" onclick="showWarning()">احصل على الباقة الآن!</a>
-
-        <p class="small-text">انقر فوق الزر أعلاه للمطالبة بعرضك (سيتم تحويلك إلى صفحة التأكيد)</p>
-
-        <!-- الرسالة التحذيرية (مخفية في البداية) -->
-        <div id="warning-message">
-            <h2 class="warning-title">🚨 لا تصدق كل رابط يوصلك يا هطف! 🚨</h2>
-            <p>لو كان هذا احتيالًا حقيقيًا، لكانت معلوماتك الشخصية او صورك أو بطاقتك البنكية مسروقة الآن!</p>
-            <p><strong>هذه الصفحة لأغراض التوعية.</strong></p>
-            <p>دائماً تأكد من مصدر أي رابط أو عرض قبل الضغط عليه أو إدخال أي بيانات ولا تصدق هذي العروض المزيفة.</p>
+    <div class="header">
+        <div class="logo">
+            <img src="https://i.ibb.co/mCf2yFt/image.jpg" alt="يمن موبايل" onerror="this.style.display='none'">
         </div>
     </div>
 
-    <div class="copyright">
-        © 2024 QM3.L - جميع الحقوق محفوظة.
+    <div class="offer-card">
+        <h1>🎉 باقة الفورجي الأسطورية 🎉</h1>
+        
+        <div class="price-tag">
+            <div class="original-price">السعر الأصلي: 800 ريال</div>
+            <div class="new-price">فقط 400 ريال!</div>
+            <div>توفير 50%</div>
+        </div>
+
+        <div class="features">
+            <h3>🎁 المميزات:</h3>
+            <li>1 جيجا إنترنت فائقة السرعة</li>
+            <li>صالح لمدة 30 يوم</li>
+            <li>دعم كافة الأجهزة</li>
+            <li>سرعة تصل إلى 100 ميجابايت/ثانية</li>
+        </div>
+
+        <div class="timer">
+            ⏰ العرض ساري لمدة 24 ساعة فقط
+        </div>
+
+        <div class="badge">🔥 الأكثر طلباً</div>
+        <div class="badge">⚡ محدود الكمية</div>
+
+        <button class="cta-button" onclick="redirectToWarning()">
+            🚀 احصل على الباقة الآن
+        </button>
+
+        <p class="small-text">
+            * سيتم إطلاق الباقة رسمياً إذا حققنا 1000 طلب خلال 24 ساعة
+        </p>
+        <p class="small-text">
+            ** كن من أوائل المشتركين واحصل على أفضل تجربة
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 QM3.L - جميع الحقوق محفوظة</p>
+        <p>الشروط والأحكام | سياسة الخصوصية</p>
     </div>
 
     <script>
-        // دالة لإظهار الرسالة التحذيرية
-        function showWarning() {
-            document.getElementById('warning-message').style.display = 'block';
+        function redirectToWarning() {
+            // سيتم الانتقال إلى صفحة التحذير بعد 1.5 ثانية (لإضافة تأثير واقعي)
+            setTimeout(function() {
+                window.location.href = "warning.html"; // اسم صفحة التحذير
+            }, 1500);
+            
+            // يمكنك إضافة تأثير تحميل هنا إذا أردت
+            alert("جاري معالجة طلبك...");
         }
+        
+        // عدّاد تنازلي لوهمي
+        function updateCounter() {
+            const counters = document.querySelectorAll('.timer');
+            counters.forEach(counter => {
+                counter.textContent = "⏰ العرض ساري لمدة 23:59:59";
+            });
+        }
+        
+        setInterval(updateCounter, 1000);
     </script>
 </body>
-  </html>
+                                    </html>
