@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>يمن موبايل - باقة الفورجي الأسطورية</title>
-    <meta property="og:title" content="يمن موبايل تطلق باقة الفورجي الأسطورية! 🎉" />
+    <title>يمن موبايل - عرض المولد النبوي</title>
+    <!-- هذه الصورة تظهر عند مشاركة الرابط في الواتساب -->
+    <meta property="og:image" content="https://photos.app.goo.gl/Ba6fJzHKfc7Zbkzy6" />
+    <meta property="og:title" content="🎉 يمن موبايل تطلق باقة الفورجي الأسطورية!" />
     <meta property="og:description" content="1 جيجا فقط بـ 400 ريال! العرض ساري لفترة محدودة." />
-    <meta property="og:image" content="https://i.ibb.co/mCf2yFt/image.jpg" />
     <meta property="og:url" content="https://qm3l.github.io/Warning-messages/" />
     <style>
         * {
@@ -40,12 +41,16 @@
             border-radius: 50%;
             padding: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .logo img {
+        .logo-img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+            border-radius: 50%;
         }
         
         .offer-card {
@@ -112,6 +117,9 @@
             border-radius: 10px;
             margin: 20px 0;
             border: 2px dashed #d32f2f;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: bold;
         }
         
         .cta-button {
@@ -182,17 +190,18 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="https://i.ibb.co/mCf2yFt/image.jpg" alt="يمن موبايل" onerror="this.style.display='none'">
+            <img class="logo-img" src="https://photos.app.goo.gl/6abGoxgB24DDizxP7" alt="يمن موبايل">
         </div>
+        <h1 style="color: white;">بمناسبة المولد النبوي الشريف</h1>
     </div>
 
     <div class="offer-card">
         <h1>🎉 باقة الفورجي الأسطورية 🎉</h1>
         
         <div class="price-tag">
-            <div class="original-price">السعر الأصلي: 800 ريال</div>
+            <div class="original-price">السعر الأصلي: 600 ريال</div>
             <div class="new-price">فقط 400 ريال!</div>
-            <div>توفير 50%</div>
+            <div>توفير 33%</div>
         </div>
 
         <div class="features">
@@ -203,8 +212,8 @@
             <li>سرعة تصل إلى 100 ميجابايت/ثانية</li>
         </div>
 
-        <div class="timer">
-            ⏰ العرض ساري لمدة 24 ساعة فقط
+        <div class="timer" id="countdown">
+            ⏰ الوقت المتبقي: 23:59:59
         </div>
 
         <div class="badge">🔥 الأكثر طلباً</div>
@@ -215,38 +224,48 @@
         </button>
 
         <p class="small-text">
-            * سيتم إطلاق الباقة رسمياً إذا حققنا 1000 طلب خلال 24 ساعة
+            * العرض ساري حتى نفاد الكمية
         </p>
         <p class="small-text">
-            ** كن من أوائل المشتركين واحصل على أفضل تجربة
+            ** بمناسبة المولد النبوي الشريف
         </p>
     </div>
 
     <div class="footer">
-        <p>© 2024 QM3.L - جميع الحقوق محفوظة</p>
+        <p>© 2024 يمن موبايل - جميع الحقوق محفوظة</p>
         <p>الشروط والأحكام | سياسة الخصوصية</p>
     </div>
 
     <script>
         function redirectToWarning() {
-            // سيتم الانتقال إلى صفحة التحذير بعد 1.5 ثانية (لإضافة تأثير واقعي)
             setTimeout(function() {
-                window.location.href = "warning.html"; // اسم صفحة التحذير
+                window.location.href = "warning.html";
             }, 1500);
             
-            // يمكنك إضافة تأثير تحميل هنا إذا أردت
             alert("جاري معالجة طلبك...");
         }
         
-        // عدّاد تنازلي لوهمي
-        function updateCounter() {
-            const counters = document.querySelectorAll('.timer');
-            counters.forEach(counter => {
-                counter.textContent = "⏰ العرض ساري لمدة 23:59:59";
-            });
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let timeLeft = 24 * 60 * 60;
+            
+            const timer = setInterval(function() {
+                timeLeft--;
+                
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownElement.textContent = `⏰ الوقت المتبقي: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    countdownElement.textContent = "⏰ انتهى الوقت!";
+                }
+            }, 1000);
         }
         
-        setInterval(updateCounter, 1000);
+        startCountdown();
     </script>
 </body>
-                                    </html>
+</html>
